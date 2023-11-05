@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome Back</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Full height */
+    background-color: yellow; /* Yellow background color */
+  }
+  #welcome-container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 1s; /* Transition for the swipe effect */
+    z-index: 2; /* Ensure the div is above the background for the click event */
+  }
+  .welcome-message {
+    text-align: center;
+    font-size: 2em;
+    color: black;
+  }
+</style>
+</head>
+<body>
+
+<div id="welcome-container" onclick="swipeAndRedirect()">
+  <div class="welcome-message">
+    Welcome back, Peter!
+  </div>
+</div>
+
+<script>
+function swipeAndRedirect() {
+  // Swipe up effect
+  document.getElementById('welcome-container').style.transform = 'translateY(-100vh)';
+  
+  // Redirect to home.html after the swipe effect
+  setTimeout(function() {
+    window.location.href = 'home.html';
+  }, 1000); // Delay to allow the swipe effect to be seen
+}
+</script>
+
+</body>
+</html>

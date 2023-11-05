@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feedback Page</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #e0e0e0;
+  }
+  .container {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+  }
+  .status-bar {
+    height: 20px;
+    background: #f0f0f0;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 5px;
+  }
+  .wifi-icon {
+    width: 20px;
+    height: 10px;
+    background: black;
+    margin-right: 5px;
+  }
+  .battery-icon {
+    border: 1px solid black;
+    width: 20px;
+    height: 10px;
+    position: relative;
+  }
+  .battery-icon::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: -3px;
+    width: 3px;
+    height: 6px;
+    background: black;
+  }
+  h2 {
+    margin: 10px 0;
+  }
+  .emojis {
+    font-size: 32px; /* Adjust size as needed */
+    cursor: pointer;
+  }
+  .emoji {
+    display: inline-block;
+    margin: 0 5px;
+  }
+  /* Additional styles can be added here */
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="status-bar">
+    <div class="wifi-icon"></div>
+    <div class="battery-icon"></div>
+  </div>
+  <h2>So buddy, how was your face when you were playing the game?</h2>
+  <div class="emojis">
+    <span class="emoji" onclick="emojiFeedback('sad')">😟</span>
+    <span class="emoji" onclick="emojiFeedback('neutral')">😐</span>
+    <span class="emoji" onclick="emojiFeedback('happy')">😀</span>
+  </div>
+</div>
+
+<script>
+function emojiFeedback(type) {
+  // Define the feedback message
+  let feedbackMessage = '';
+  switch (type) {
+    case 'sad':
+      feedbackMessage = 'You selected sad 😟';
+      break;
+    case 'neutral':
+      feedbackMessage = 'You selected neutral 😐';
+      break;
+    case 'happy':
+      feedbackMessage = 'You selected happy 😀';
+      break;
+    default:
+      feedbackMessage = 'No feedback selected';
+  }
+
+  // Show an alert with the feedback message
+  alert(feedbackMessage);
+
+  // Redirect to lb.html
+  window.location.href = 'lib.html';
+}
+
+</script>
+
+</body>
+</html>

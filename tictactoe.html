@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tic Tac Toe</title>
+<link rel="stylesheet" href="tictactoee.css">
+</head>
+<body>
+<div id="game-container">
+  <div class="row">
+    <div class="cell" onclick="nextMove(this)"></div>
+    <div class="cell" onclick="nextMove(this)"></div>
+    <div class="cell" onclick="nextMove(this)"></div>
+  </div>
+  <div class="row">
+    <div class="cell" onclick="nextMove(this)"></div>
+    <div class="cell" onclick="nextMove(this)"></div>
+    <div class="cell" onclick="nextMove(this)"></div>
+  </div>
+  <div class="row">
+    <div class="cell" onclick="nextMove(this)"></div>
+    <div class="cell" onclick="nextMove(this)"></div>
+    <div class="cell" onclick="nextMove(this)"></div>
+  </div>
+</div>
+
+  
+<div id="status"></div>
+<br>
+<br>
+<!-- Additions to the existing HTML -->
+<div id="scoreboard">
+    <h2>Scoreboard</h2>
+    <p>Player (X): <span id="player-score">0</span></p>
+    <p>Computer (O): <span id="computer-score">0</span></p>
+  </div>
+  
+
+
+  <button id="next-game" onclick="initGame()">Next Game</button>
+  <button id="exit-game" onclick="exitGame()">Exit Game</button>
+
+<script src="tictactoee.js"></script>
+</body>
+</html>

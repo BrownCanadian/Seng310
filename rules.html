@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tic-Tac-Toe Rules</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+  }
+  .container {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+  }
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Tic-Tac-Toe Rules</h1>
+  <p>The game is played on a grid that's 3 squares by 3 squares.</p>
+  <p>Players take turns putting their marks in empty squares.</p>
+  <p>The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.</p>
+  <p>When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.</p>
+  <img src="data:image/png;base64,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" alt="Tic-Tac-Toe Image" />
+  <br>
+  <button onclick="startGame()">Start Game</button>
+  <button onclick="goBack()">Go Back</button>
+</div>
+
+<script>
+function startGame() {
+  // Redirect to the game page (e.g., index.html or game.html)
+  window.location.href = 'tictactoe.html';
+}
+
+function goBack() {
+  // Go back to the previous page
+  window.history.back();
+}
+</script>
+
+</body>
+</html>

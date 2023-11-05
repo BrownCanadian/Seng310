@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Dashboard</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #e0e0e0;
+  }
+  .container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .card {
+    background: #f0f0f0;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+  .card:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  .card img {
+    max-width: 100%;
+    height: auto;
+  }
+  .time {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .footer {
+    text-align: center;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <div>Date: <strong>Saturday, November 4th</strong></div>
+    <div class="time">4:31 PM</div>
+    <div>Wifi</div>
+  </div>
+  
+  <a href="lib.html">
+  <div style="margin-bottom: 2px;" class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Video-Game-Controller-Icon-D-Edit.svg/64px-Video-Game-Controller-Icon-D-Edit.svg.png" alt="Games Library" />
+    <p>Games Library</p>
+  </div>
+</a>
+  <div class="card">
+    <img style="height:56px" src="https://cdn-icons-png.flaticon.com/512/5962/5962463.png" alt="Chat With Me" />
+    <p>Chat With Me</p>
+  </div>
+  
+  <div class="card">
+    <img style="height:56px" src="https://cdn.icon-icons.com/icons2/3373/PNG/512/kid_mood_icon_211294.png" alt="Current Mood" />
+    <p>Current Mood</p>
+  </div>
+  
+  <div class="card">
+    <img style="height:56px" src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png" alt="Study Buddy" />
+    <p>Study Buddy</p>
+  </div>
+  
+  <div class="footer">
+    <p>Tap To Choose</p>
+  </div>
+</div>
+<script>
+    // This function updates the displayed time
+    function updateTime() {
+      var currentTime = new Date();
+      var hours = currentTime.getHours();
+      var minutes = currentTime.getMinutes();
+      var ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12;
+      hours = hours ? hours : 12; // the hour '0' should be '12'
+      minutes = minutes < 10 ? '0'+minutes : minutes;
+      var formattedTime = hours + ':' + minutes + ' ' + ampm;
+      document.querySelector('.time').textContent = formattedTime;
+    }
+  
+    // Call `updateTime` every 1000 milliseconds (every second)
+    setInterval(updateTime, 1000);
+    
+    // Also call `updateTime` immediately to set the initial time
+    updateTime();
+  </script>
+</body>
+</html>
